@@ -51,6 +51,8 @@ pipeline {
                             docker exec ${DOCKER_CONTAINER} sh -c "aws configure set aws_access_key_id ${AWS_ACCESS_KEY_ID}"
                             docker exec ${DOCKER_CONTAINER} sh -c "aws configure set aws_secret_access_key  ${AWS_SECRET_ACCESS_KEY}"
                             docker exec ${DOCKER_CONTAINER} sh -c "aws sts get-caller-identity"
+                            docker exec ${DOCKER_CONTAINER} sh -c "chmod +x s3Create.sh"
+                            docker exec ${DOCKER_CONTAINER} sh -c "./s3Create.sh"
                         '''
                     }
 

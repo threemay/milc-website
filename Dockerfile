@@ -9,7 +9,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN sh s3BucketCreate.sh
+RUN sh EnvBuild.sh
 
 ENTRYPOINT ["tail"]
 
