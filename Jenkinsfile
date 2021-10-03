@@ -13,7 +13,7 @@ pipeline {
                      GIT_CREDENTIALS_ID = '1'
                      BUILD_USER_EMAIL = '254363807@qq.com'
                      BUILD_USER_ID = 'threemay'
-                     DOCKER_IMAGE = "my_image"
+                     DOCKER_IMAGE = "test"
                      DOCKER_CONTAINER = "my_container"
                  }
 
@@ -31,125 +31,39 @@ pipeline {
 
             }
 
-            // stage("List S3 buckets") {
+
+            // stage('npm build') {
+
             //     steps {
-            //         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: '2', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-            //         AWS("--region=us-east-1 s3 ls")
-            //         }
+            //         echo "hello"
+            //         // sh'''
+            //         //     docker build -t ${DOCKER_IMAGE} .
+            //         // '''
             //     }
+
             // }
-
-
-            stage('npm build') {
-
-                steps {
-
-                    sh'''
-                        docker build -t ${DOCKER_IMAGE}
-                    '''
-                }
-
-            }
 
             stage('create s3 bucket') {
                 steps {
+                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'aws_key', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+                        sh'''
+                            docker run -t -d --name ${DOCKER_CONTAINER} ${DOCKER_IMAGE}
+                            docker exec ${DOCKER_CONTAINER} sh -c "aws configure set aws_access_key_id ${AWS_ACCESS_KEY_ID}"
+                            docker exec ${DOCKER_CONTAINER} sh -c "aws configure set aws_secret_access_key  ${AWS_SECRET_ACCESS_KEY}"
+                            docker exec ${DOCKER_CONTAINER} sh -c "aws sts get-caller-identity"
+                        '''
+                    }
 
-                    sh'''
-                        docker run -t -d --name ${DOCKER_CONTAINER} ${DOCKER_IMAGE}
-                        docker exec ${DOCKER_CONTAINER} sh -c "chmod +x s3BucketCreate.sh && ./s3BucketCreate.sh"
-                    '''
+                    // sh'''
+                    //     docker run -t -d --name ${DOCKER_CONTAINER} ${DOCKER_IMAGE}
+                    //     docker exec ${DOCKER_CONTAINER} sh -c "chmod +x s3BucketCreate.sh && ./s3BucketCreate.sh"
+                    //     docker exec ${DOCKER_CONTAINER} sh -c "chmod +x s3BucketCreate.sh && ./s3BucketCreate.sh"
+                    // '''
                 }
             }
 
-        //     stage('test_core'){
-        //         steps {
-        //             sh'''
-        //                 docker container prune -f
-        //                 docker exec easycrm sh -c "cp ./tests/test_core.py ./ && python -m unittest -v"
-        //             '''
-        //             }
-        //     }
-
-        //     stage('test_auth'){
-        //         steps {
-        //             sh'''
-        //                 docker exec easycrm sh -c "cp ./tests/test_auth.py ./ && python -m unittest test_auth.py -v"
-        //             '''
-        //         }
-        //     }
-                    
-        //     stage('integration test'){
-        //         steps {
-        //             sh'''
-        //                 docker exec easycrm sh -c "curl http://0.0.0.0:8090/login/"
-        //                 docker exec easycrm sh -c "curl -c cookies.txt -d 'username=test@gmail.com&password=shh' -X POST http://0.0.0.0:8090/login/"
-        //                 docker exec easycrm sh -c "curl -b cookies.txt http://0.0.0.0:8090/"
-        //                 docker exec easycrm sh -c "curl -b cookies.txt --request POST http://0.0.0.0:8090/organisation/create --form 'name="JiangRen"' --form 'type="other"' --form 'address="Wynyard"'"
-
-        //             '''
-        //         }
-        //     }
-
-        //     stage('load_test'){
-        //                 steps {
-        //                     sh'''
-        //                         docker exec easycrm sh -c "locust -f load_test_easy_crm.py -u 1 -r 1 --host http://0.0.0.0:8090 --headless -t 3s"
-        //                     '''
-        //                 }
-        //             }
-
-        //     stage('webdriver_test'){
-        //                 steps {
-        //                     sh'''
-        //                         python webdriver_easy_crm.py
-        //                     '''
-        //                 }
-        //             }
-
-        //     stage('clean_up') {
-
-        //         steps {
-        //             sh'''
-        //             docker stop easycrm
-        //             docker rm easycrm
-        //             '''
-        //         }
-
-        //     }
-
-        // //     stage('master -> staging') {
-        // //     steps {
-                
-        // //         git url: "${GIT_REPO_URL}",
-        // //             credentialsId: "${GIT_CREDENTIALS_ID}",
-        // //             branch: "${GIT_REPO_BRANCH}"
-
-                
-        // //         sshagent(["${GIT_CREDENTIALS_ID}"]) {
-		// // 		sh """
-		// // 			git config user.email "${BUILD_USER_EMAIL}"
-		// // 			git config user.name "${BUILD_USER_ID}"
-		// // 			git checkout "${GIT_REPO_BRANCH}"
-        // //             git pull origin master
-        // //             git branch
-		// // 			git rebase master
-        // //             git push origin staging
-		// // 		"""
-		// // 	    }
-
-        // //     }
-        // // }
 
 
-        // stage('Hello1') {
-        //     steps {
-        //         echo 'Hello World'
-        //         sh """
-        //             docker exec easycrm sh -c "chmod +x webdriver_test.sh"
-        //             docker exec easycrm sh -c "./webdriver_test.sh"
-        //         """
-        //     }
-        // }
 
 
 

@@ -1,19 +1,15 @@
-FROM node:12.18.1
+# FROM node:12.18.1
 
-ENV NODE_ENV=production
+# ENV NODE_ENV=production
+
+# WORKDIR /app
+FROM ubuntu
 
 WORKDIR /app
 
 COPY . /app
 
-RUN npm install webpack
-
-RUN npm install
-
-RUN npm run build
-
-FROM hashicorp/terraform
+RUN sh s3BucketCreate.sh
 
 ENTRYPOINT ["tail"]
 
-CMD ["-f","/dev/null"]
