@@ -46,6 +46,13 @@ module.exports = {
   entry: {
     app: path.resolve(PROJECT_PATH, "./src/index.js"),
   },
+  resolve: {
+    alias: {
+      src: path.resolve(PROJECT_PATH, "./src"),
+      components: path.resolve(PROJECT_PATH, "./src/components"),
+      utils: path.resolve(PROJECT_PATH, "./src/utils"),
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(PROJECT_PATH, "./public/index.html"),
