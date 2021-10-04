@@ -1,0 +1,1 @@
+!function(){var t={138:function(t,n,r){(t=r.nmd(t))&&t.hot&&t.hot.accept(),document.querySelector("#root").innerHTML="config test"}},n={};function r(e){var o=n[e];if(void 0!==o)return o.exports;var c=n[e]={id:e,loaded:!1,exports:{}};return t[e](c,c.exports,r),c.loaded=!0,c.exports}r.nmd=function(t){return t.paths=[],t.children||(t.children=[]),t},r(138)}();

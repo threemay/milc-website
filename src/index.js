@@ -1,5 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+if (module && module.hot) {
+  module.hot.accept();
+}
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const ele = document.querySelector("#root");
+ele.innerHTML = "config test";

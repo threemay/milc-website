@@ -1,0 +1,1 @@
+(()=>{var r={138:(r,e,o)=>{(r=o.nmd(r))&&r.hot&&r.hot.accept(),document.querySelector("#root").innerHTML="阶段测试"}},e={};function o(t){var d=e[t];if(void 0!==d)return d.exports;var n=e[t]={id:t,loaded:!1,exports:{}};return r[t](n,n.exports,o),n.loaded=!0,n.exports}o.nmd=r=>(r.paths=[],r.children||(r.children=[]),r),o(138)})();
