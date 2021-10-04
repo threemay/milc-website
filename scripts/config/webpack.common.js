@@ -68,6 +68,21 @@ module.exports = {
         configFile: path.resolve(PROJECT_PATH, "./tsconfig.json"),
       },
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          context: "public",
+          from: "*",
+          to: path.resolve(PROJECT_PATH, "./dist/public"),
+          toType: "dir",
+          globOptions: {
+            dot: true,
+            gitignore: true,
+            ignore: ["**/index.html"],
+          },
+        },
+      ],
+    }),
   ],
   module: {
     rules: [
