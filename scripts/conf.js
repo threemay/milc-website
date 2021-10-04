@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/prefer-module */
 const path = require('path')
 
 const PROJECT_PATH = path.resolve(__dirname, '../')

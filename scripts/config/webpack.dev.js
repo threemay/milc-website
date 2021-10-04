@@ -4,7 +4,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 const common = require('./webpack.common')
-const { PROJECT_PATH, SERVER_HOST, SERVER_PORT } = require('../constant')
+const { PROJECT_PATH, SERVER_HOST, SERVER_PORT } = require('../conf')
 
 module.exports = merge(common, {
 	mode: 'development',
