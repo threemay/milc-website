@@ -26,12 +26,13 @@ module.exports = {
 	},
 	settings: {
 		'import/resolver': {
+			typescript: {},
 			node: {
 				extensions: ['.tsx', '.ts', '.js', '.json'],
 			},
 		},
 	},
-	plugins: ['react', '@typescript-eslint'],
+	plugins: ['react', 'unicorn', 'promise', '@typescript-eslint'],
 	rules: {
 		'import/extensions': [
 			ERROR,
@@ -58,7 +59,7 @@ module.exports = {
 					// 小驼峰
 					camelCase: true,
 					// 下划线
-					snakeCase: false,
+					snakeCase: true,
 					// 大驼峰
 					pascalCase: true,
 				},
@@ -87,8 +88,8 @@ module.exports = {
 		'no-unused-vars': OFF,
 
 		'react/jsx-filename-extension': [ERROR, { extensions: ['.tsx', 'ts', '.jsx', 'js'] }],
-		'react/jsx-indent-props': [ERROR, 2],
-		'react/jsx-indent': [ERROR, 2],
+		'react/jsx-indent-props': [ERROR, 'tab'],
+		'react/jsx-indent': [ERROR, 'tab'],
 		'react/jsx-one-expression-per-line': OFF,
 		'react/destructuring-assignment': OFF,
 		'react/state-in-constructor': OFF,
@@ -100,10 +101,11 @@ module.exports = {
 		'jsx-a11y/no-static-element-interactions': OFF,
 
 		'lines-between-class-members': [ERROR, 'always'],
-		// indent: [ERROR, 2, { SwitchCase: 1 }],
+		indent: ['error', 'tab', { SwitchCase: 1 }],
+		'no-tabs': 0,
 		'linebreak-style': [ERROR, 'unix'],
 		quotes: [ERROR, 'single'],
-		semi: [ERROR, 'always'],
+		semi: [ERROR, 'never'],
 		'no-unused-expressions': WARN,
 		'no-plusplus': OFF,
 		'no-console': OFF,
