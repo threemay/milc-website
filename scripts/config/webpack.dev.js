@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/prefer-module */
 const { merge } = require('webpack-merge')
 const path = require('path')
 const webpack = require('webpack')

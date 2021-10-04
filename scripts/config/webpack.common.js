@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable unicorn/prefer-module */
 const path = require('path')
 const WebpackBar = require('webpackbar')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -69,8 +70,8 @@ module.exports = {
 			template: path.resolve(PROJECT_PATH, './public/index.html'),
 		}),
 		new WebpackBar({
-			name: 'Link Start!!!',
-			color: '#52c41a',
+			name: isDevelopment ? 'RUNNING' : 'BUNDLING',
+			color: isDevelopment ? '#52c41a' : '#722ed1',
 		}),
 		new ForkTsCheckerWebpackPlugin({
 			typescript: {

@@ -28,10 +28,10 @@ module.exports = {
 	},
 	settings: {
 		'import/resolver': {
-			typescript: {},
 			node: {
 				extensions: ['.tsx', '.ts', '.js', '.json'],
 			},
+			typescript: {},
 		},
 	},
 	plugins: ['react', 'unicorn', 'promise', '@typescript-eslint', 'prettier'],
@@ -56,13 +56,9 @@ module.exports = {
 			ERROR,
 			{
 				cases: {
-					// 中划线
 					kebabCase: true,
-					// 小驼峰
 					camelCase: true,
-					// 下划线
 					snakeCase: true,
-					// 大驼峰
 					pascalCase: true,
 				},
 			},
