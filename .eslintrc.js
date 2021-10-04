@@ -1,4 +1,9 @@
 module.exports = {
+	env: {
+		browser: true,
+		es2020: true,
+		node: true,
+	},
 	plugins: ['prettier', '@typescript-eslint'],
 	extends: ['airbnb-typescript', 'react-app', 'prettier'],
 	parser: '@typescript-eslint/parser',

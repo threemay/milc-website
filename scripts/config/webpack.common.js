@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 const path = require('path')
 const WebpackBar = require('webpackbar')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
