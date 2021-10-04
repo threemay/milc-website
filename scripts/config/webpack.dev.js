@@ -24,4 +24,12 @@ module.exports = merge(common, {
     noInfo: true,
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
+  optimization: {
+    minimize: false,
+    minimizer: [],
+    splitChunks: {
+      chunks: "all",
+      minSize: 0,
+    },
+  },
 });

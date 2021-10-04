@@ -3,6 +3,7 @@ const WebpackBar = require("webpackbar");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const { PROJECT_PATH } = require("../constant");
 const { isDevelopment, isProduction } = require("../env");
@@ -47,6 +48,12 @@ module.exports = {
   entry: {
     app: path.resolve(PROJECT_PATH, "./src/index.tsx"),
   },
+  cache: {
+    type: "filesystem",
+    buildDependencies: {
+      config: [__filename],
+    },
+  },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".json"],
     alias: {
@@ -83,6 +90,7 @@ module.exports = {
         },
       ],
     }),
+    new CleanWebpackPlugin(),
   ],
   module: {
     rules: [
