@@ -14,6 +14,7 @@ module.exports = merge(common, {
   output: {
     filename: "js/[name].[contenthash:8].js",
     path: path.resolve(PROJECT_PATH, "./dist"),
+    assetModuleFilename: "images/[name].[contenthash:8].[ext]",
   },
   plugins: [
     new MiniCssExtractPlugin({
