@@ -2,6 +2,7 @@ const OFF = 0
 const WARN = 1
 const ERROR = 2
 
+// eslint-disable-next-line unicorn/prefer-module
 module.exports = {
 	env: {
 		browser: true,
@@ -9,12 +10,13 @@ module.exports = {
 		node: true,
 	},
 	extends: [
-		'plugin:react/recommended',
 		'airbnb',
 		'airbnb/hooks',
+		'plugin:react/recommended',
 		'plugin:unicorn/recommended',
 		'plugin:promise/recommended',
 		'plugin:@typescript-eslint/recommended',
+		'plugin:prettier/recommended',
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -32,7 +34,7 @@ module.exports = {
 			},
 		},
 	},
-	plugins: ['react', 'unicorn', 'promise', '@typescript-eslint'],
+	plugins: ['react', 'unicorn', 'promise', '@typescript-eslint', 'prettier'],
 	rules: {
 		'import/extensions': [
 			ERROR,
