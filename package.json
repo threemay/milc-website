@@ -14,7 +14,9 @@
 	"scripts": {
 		"start": "cross-env NODE_ENV=development webpack-dev-server --config ./scripts/config/webpack.dev.js",
 		"build": "cross-env NODE_ENV=production webpack --config ./scripts/config/webpack.prod.js",
-		"format": "prettier --write src/**/*.{ts,tsx,scss,css,json}"
+		"format": "prettier --write src/**/*.{ts,tsx,scss,css,json}",
+		"lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
+		"prod": "yarn format && yarn lint && yarn build"
 	},
 	"devDependencies": {
 		"@babel/core": "7.13.16",

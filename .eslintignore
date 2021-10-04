@@ -1,0 +1,7 @@
+build/*
+public/*
+docs/*
+templates/*
+.github/*
+dist/*
+src/typings/*
