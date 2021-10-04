@@ -2,6 +2,7 @@ const path = require("path");
 const WebpackBar = require("webpackbar");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const { PROJECT_PATH } = require("../constant");
 const { isDevelopment, isProduction } = require("../env");
@@ -44,9 +45,10 @@ const getCssLoaders = () => {
 
 module.exports = {
   entry: {
-    app: path.resolve(PROJECT_PATH, "./src/index.js"),
+    app: path.resolve(PROJECT_PATH, "./src/index.tsx"),
   },
   resolve: {
+    extensions: [".tsx", ".ts", ".js", ".json"],
     alias: {
       src: path.resolve(PROJECT_PATH, "./src"),
       components: path.resolve(PROJECT_PATH, "./src/components"),
@@ -60,6 +62,11 @@ module.exports = {
     new WebpackBar({
       name: "Link Start!!!",
       color: "#52c41a",
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        configFile: path.resolve(PROJECT_PATH, "./tsconfig.json"),
+      },
     }),
   ],
   module: {
