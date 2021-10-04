@@ -61,6 +61,18 @@ module.exports = {
         test: /\.css$/,
         use: [...getCssLoaders()],
       },
+      {
+        test: /\.scss$/,
+        use: [
+          ...getCssLoaders(),
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: isDevelopment,
+            },
+          },
+        ],
+      },
     ],
   },
 };
