@@ -7,3 +7,8 @@ terraform --version
 cd tffile
 terraform init
 terraform apply --auto-approve
+
+# upload files to s3
+bucketname=$(terraform output bucket_name | sed 's/"//g')
+aws s3 cp ../public/index.html s3://${bucketname}
+

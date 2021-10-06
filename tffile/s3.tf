@@ -23,6 +23,11 @@ output "s3_url" {
   value       = "http://${var.app_prefix}-${var.stage_name}-source-bucketity.s3-website-${var.aws-region}.amazonaws.com"
 }
 
+output "bucket_name" {
+  description = "bucket_name"
+  value       = "${var.app_prefix}-${var.stage_name}-source-bucketity"
+}
+
 # resource "aws_s3_bucket" "stepfunction_ecs_target_s3bucket" {
 #   bucket =  "${var.app_prefix}-${var.stage_name}-target-bucket-${data.aws_caller_identity.current.account_id}"
 #   acl    = "private"
