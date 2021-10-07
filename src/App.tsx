@@ -1,11 +1,25 @@
-import React from 'react'
-import Test from './components/Test'
-import style from './app.scss'
+import React, { useEffect } from 'react'
+import { HashRouter as Router, Route, Switch, useLocation } from 'react-router-dom'
+import Home from './pages/Home'
+
+const ScrollToTop = (props: any) => {
+	const { pathname } = useLocation()
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [pathname])
+	return props.children
+}
 
 const App: React.FC<any> = () => (
-	<div className={style.app}>
-		<Test text='config test' project='MILC' />
-	</div>
+	<Router>
+		<ScrollToTop>
+			<Switch>
+				<Route path='/'>
+					<Home />
+				</Route>
+			</Switch>
+		</ScrollToTop>
+	</Router>
 )
 
 export default App
