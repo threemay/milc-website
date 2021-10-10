@@ -53,7 +53,7 @@ MILC project.
    yarn install
    ```
 3. Run
-```sh
+   ```sh
    yarn start
    ```
 
