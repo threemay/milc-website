@@ -1,0 +1,9 @@
+a.navLink {
+	color: #77838F;
+	text-decoration: none;
+	
+	&:hover {
+		color: #090761;
+		cursor: pointer;
+	}
+}
