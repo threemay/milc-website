@@ -47,3 +47,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* make the customizations */
+$theme-colors: (
+	"info": tomato,
+	"danger": teal
+);
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
