@@ -22,6 +22,13 @@ const useStyles = makeStyles(() => ({
 	navlinkWrap: {
 		display: 'flex',
 		marginBottom: 0,
+		'@media (max-width:780px)': {
+			// eslint-disable-line no-useless-computed-key
+			display: 'none',
+		},
+	},
+	logo: {
+		flex: 1,
 	},
 	liWrap: {
 		display: 'flex',
@@ -42,15 +49,16 @@ const Header: React.FC<IHeaderProps> = () => {
 
 	return (
 		<Box className={classes.headerWrap}>
-			<Box />
+			<Box className={classes.logo} />
 			<ul className={classes.navlinkWrap}>
 				<NavLink text='Home' link='#' dropDown={<TestDropdownBox />} />
 				<NavLink text='Finding a Tutor' link='/#/tutors' />
 				<NavLink text='Account' link='/#/account' />
-				<li className={classes.liWrap}>
-					<FontAwesomeIcon icon={faUserCircle} className={classes.userIcon} />
-				</li>
 			</ul>
+			<Box className={classes.liWrap}>
+				<FontAwesomeIcon icon={faUserCircle} className={classes.userIcon} />
+				<FontAwesomeIcon icon={['far', 'user-circle']} className={classes.userIcon} />
+			</Box>
 		</Box>
 	)
 }
