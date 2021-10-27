@@ -10,49 +10,49 @@ export interface TutorInfo  {
     intro:string
 }
 export let data:  TutorInfo[] = [
-    {	name:'Ezequiel' ,
+    {	name:'Amy' ,
         rate :	5.1234,
         photo: tutor1,
         price: 55,
         intro: 'Piano tutor for all ages and levels in Sydney. 13 years of teaching experience. Working with children certificate. Professional Performer. Fun and educational.'
     },
-    {	name:'Ezeqasfefawfuiel' ,
-        rate :	5.1234,
+    {	name:'Bella' ,
+        rate :	5.89,
         photo: tutor2,
-        price: 40,
-        intro: 'Piano tutor for all ages and levels in Sydney. 13 years of teaching experience. Working with children certificate. Professional Performer. Fun and educational.'
+        price: 60,
+        intro: 'Having been classically trained in piano with 20 years piano experience, and making a living performing with guitar and vocals live. All of my beginning students have learnt to sight read within the month.'
     },
-    {	name:'Sam' ,
+    {	name:'Cindy' ,
         rate :	4.9,
         photo: tutor3,
         price: 55,
-        intro: 'Piano tutor for all ages and levels in Sydney. 13 years of teaching experience. Working with children certificate. Professional Performer. Fun and educational.'
+        intro: 'I am a primary school music tutor in Melbourne, teaching voice, guitar & guitar - both individual and group lessons. Outside of this, I conduct songwriting workshops, work as a vocal coach mentor and play shows across Victoria & interstate as a solo artist and with a band.'
     },
-    {	name:'Cindy' ,
+    {	name:'Dan' ,
         rate :	5.1234,
         photo: tutor4,
         price: 45,
         intro: 'Piano tutor for all ages and levels in Sydney. 13 years of teaching experience. Working with children certificate. Professional Performer. Fun and educational.'
     },
-    {	name:'Ezequi;0oyiel' ,
+    {	name:'Ezequil' ,
         rate :	5.1234,
         photo: tutor1,
         price: 55,
         intro: 'Piano tutor for all ages and levels in Sydney. 13 years of teaching experience. Working with children certificate. Professional Performer. Fun and educational.'
     },
-    {	name:'uyil;u' ,
+    {	name:'Fendi' ,
         rate :	5.1234,
         photo: tutor2,
         price: 40,
         intro: 'Piano tutor for all ages and levels in Sydney. 13 years of teaching experience. Working with children certificate. Professional Performer. Fun and educational.'
     },
-    {	name:'strjj' ,
+    {	name:'Jacque' ,
         rate :	4.9,
         photo: tutor3,
         price: 55,
         intro: 'Piano tutor for all ages and levels in Sydney. 13 years of teaching experience. Working with children certificate. Professional Performer. Fun and educational.'
     },
-    {	name:'sdrg' ,
+    {	name:'Lynn' ,
         rate :	5.1234,
         photo: tutor4,
         price: 45,

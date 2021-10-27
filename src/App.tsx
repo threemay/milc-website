@@ -14,7 +14,7 @@ const App: React.FC<any> = () => (
 	<Router>
 		<ScrollToTop>
 			<Switch>
-				<Route path='/'>
+				<Route path='/'  component={Home}>
 					<Home />
 				</Route>
 			</Switch>

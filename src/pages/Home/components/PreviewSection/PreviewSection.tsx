@@ -1,6 +1,7 @@
+import React from 'react'
+import { Link } from 'react-router-dom';
 import './PreviewSection.css';
 import { data, TutorInfo } from './data'
-import React from 'react'
 
 import SwiperCore, { Navigation, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -30,7 +31,7 @@ const TutorCard: React.FunctionComponent<TutorCardProps> = ({ key,info }) =>{
                 <FontAwesomeIcon className='star'icon={faStar} />
                 {info.rate.toFixed(2)}(10 reviews)
             </div>
-            <div className='TutorIntro'>{info.intro} </div>
+            <div className='TutorIntro' style={{"WebkitBoxOrient": "vertical"}}>{info.intro} </div>
             <div className='priceTag'>
                 ${info.price}/h
             </div>
@@ -41,13 +42,13 @@ const TutorCard: React.FunctionComponent<TutorCardProps> = ({ key,info }) =>{
 const TutorCards:React.FunctionComponent =() =>{
     const cards = data.map((item:TutorInfo) => {
         // eslint-disable-next-line react/jsx-key
-        return <SwiperSlide> <TutorCard   key={item.name} info={item} /></SwiperSlide>
+        return <SwiperSlide > <TutorCard   key={item.name} info={item} /></SwiperSlide>
     })
 
     return(
         <div className='TutorCards'>
             <Swiper
-                spaceBetween={30}
+                spaceBetween={10}
                 loop={true}
                 loopFillGroupWithBlank={true}
                 pagination={{
@@ -55,11 +56,11 @@ const TutorCards:React.FunctionComponent =() =>{
                 }}
 
                 breakpoints={{
-                    876: {
+                    1400: {
                         slidesPerView: 3,
                         slidesPerGroup: 3
                     },
-                    586: {
+                    866: {
                         slidesPerView: 2,
                         slidesPerGroup: 2
                     },
@@ -71,7 +72,7 @@ const TutorCards:React.FunctionComponent =() =>{
                 onSwiper={(swiper) => {
                     swiper.update();
                 }}
-                className="Swiper">
+                className="swiper-container">
                 {cards}
             </Swiper>
         </div>
@@ -83,7 +84,7 @@ export const PreviewSection:React.FunctionComponent = () => {
         <div className='PreviewSection'>
             <div className='Subtitle'>Featured Courses</div>
             <div className='intro'>Discover Your Perfect Private Tutor in Australia</div>
-            <a href='' className='ViewAllTutors' >Browse All {'>'} </ a>
+            <div className='ViewAllTutors' >Browse All {'>'} </div>
             <TutorCards/>
         </div>
     )
