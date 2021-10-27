@@ -52,7 +52,7 @@ export let data:  TutorInfo[] = [
         price: 55,
         intro: 'Piano tutor for all ages and levels in Sydney. 13 years of teaching experience. Working with children certificate. Professional Performer. Fun and educational.'
     },
-    {	name:'Lynn' ,
+    {	name:'Leo' ,
         rate :	5.1234,
         photo: tutor4,
         price: 45,

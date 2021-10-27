@@ -8,17 +8,15 @@ img{
 
 }
 .TutorCard{
-    margin: 20px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 10px 5px 5px rgba(189, 185, 185, 0.97);
     background-color: white;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: bold;
-    width: 500px;
 }
 .TutorName{
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -66,6 +64,7 @@ img{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content:center;
 
 }
 .swiper {
