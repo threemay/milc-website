@@ -19,16 +19,16 @@ const App: React.FC<any> = () => (
 		<ScrollToTop>
 			<Header />
 			<Switch>
+				<Route exact path='/'  component={Home}>
+					<Home />
+				</Route>
 				<Route path='/tutors'>
 					<TutorList />
 				</Route>
 				<Route path='/account'>
 					<Account />
 				</Route>
-				<Route path='/'>
-					<Home />
-				</Route>
-			</Switch>
+				</Switch>
 		</ScrollToTop>
 	</Router>
 )
