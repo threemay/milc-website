@@ -1,4 +1,3 @@
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -21,23 +20,24 @@
   </ol>
 </details>
 
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 MILC project.
 
 ### Built With
 
-* [React.js](https://reactjs.org/)
-* [Bootstrap](https://getbootstrap.com)
-
+- [React.js](https://reactjs.org/)
+- [Bootstrap](https://getbootstrap.com)
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 ### Prerequisites
-* npm
+
+- npm
   ```sh
   npm install -g yarn
   ```
@@ -58,23 +58,25 @@ MILC project.
    ```
 
 <!-- ROADMAP -->
+
 ## Roadmap
 
 - [] Feature 1
 - [] Feature 2
 - [] Feature 3
-    - [] Nested Feature
-
+  - [] Nested Feature
 
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License.
 
 ### VSCode
-Use VScode plugins to achieve better coding 
+
+Use VScode plugins to achieve better coding
+
 1. ESlint
 2. Prettier - Code formatter
 3. stylelint
 4. EditorConfig for VS Code
-

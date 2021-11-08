@@ -19,7 +19,7 @@ const App: React.FC<any> = () => (
 		<ScrollToTop>
 			<Header />
 			<Switch>
-				<Route exact path='/'  component={Home}>
+				<Route exact path='/' component={Home}>
 					<Home />
 				</Route>
 				<Route path='/tutors'>
@@ -28,7 +28,7 @@ const App: React.FC<any> = () => (
 				<Route path='/account'>
 					<Account />
 				</Route>
-				</Switch>
+			</Switch>
 		</ScrollToTop>
 	</Router>
 )
