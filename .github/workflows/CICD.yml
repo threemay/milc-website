@@ -31,6 +31,8 @@ jobs:
         run: |
           yarn run build || true
           ls
+          cd build 
+          ls
       - name: test
         # run: npm test
         run: echo "fake test"
