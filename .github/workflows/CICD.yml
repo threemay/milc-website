@@ -27,7 +27,7 @@ jobs:
           npm install -g yarn 
           yarn install
       - name: build
-        run: npm run build --if-present
+        run: yarn build
       - name: test
         # run: npm test
         run: echo "fake test"
