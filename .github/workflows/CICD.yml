@@ -50,5 +50,6 @@ jobs:
         # uses: actions/aws@v2.0.1
         run: |
           aws -cli --version
+          ls
           aws s3 cp ./build/ s3://${{ secrets.S3BUCKETNAME }} --recursive
-          
+          aws s3api get-bucket-website --bucket {{ secrets.S3BUCKETNAME }}
