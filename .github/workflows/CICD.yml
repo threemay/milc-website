@@ -30,15 +30,12 @@ jobs:
       - name: build
         run: |
           yarn run build || true
-          ls
-          cd build 
-          ls
       - name: test
         # run: npm test
         run: echo "fake test"
-      - name: create infrastructure
-        # run: npm test
-        run: echo "fake test"
+      # - name: create infrastructure
+      #   # run: npm test
+      #   run: echo "fake test"
       - name: upload to s3
         # run: npm test
         run: echo "fake test"
